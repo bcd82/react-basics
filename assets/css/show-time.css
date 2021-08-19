@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box
+}
+
+.time-box {
+    width: 200px;
+    margin: 0 auto;
+    height: 400px;
+    outline: 1px solid gray;
+    padding: 10px 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.time-box h2 {
+    text-align: center;
+}
+
+.time-box.dark {
+    background-color: rgb(22, 22, 22);
+    color: white;
+}
+
+.time-box.light {
+    background-color: white;
+    color: rgb(22, 22, 22);
+}
+
+.time-box .weather-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.time-box .weather-img.summer {
+    object-position: -370px;
+}
+
+.time-box .weather-img.winter {
+    object-position: -20px;
+}
+
+.time-box .weather-img.autumn {
+    object-position: -545px;
+}
+
+.time-box .weather-img.spring {
+    object-position: -190px;
+}

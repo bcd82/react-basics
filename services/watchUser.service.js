@@ -46,15 +46,13 @@ const deleteUser = key => {
 }
 
 const selectUser = (key) => {
-
     users.forEach((user,idx) => {
         if (key !== user.key) user.isHidden = true
         else user.isSelected = true;
     })
-
 }
 
-const unSelectUser = (userKey) =>{
+const unSelectUser = () =>{
     users.forEach((user) => {
         user.isHidden = false
         user.isSelected = false;

@@ -6,10 +6,12 @@
     height: 100vh;
     color: white;
 }
-
+.who-watch-page .main-layout { 
+    max-width:1200px;
+}
 .who-watch-page .top-bar {
     display: flex;
-    width: 63%;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
 }
@@ -21,7 +23,7 @@
 
 .users-container {
     display: flex;
-    width: 70%;
+    width: 100%;
     align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
@@ -49,14 +51,35 @@
     top: 0;
     transition: top .3s, color .2s;
     color: white;
+    text-shadow: 0 0 4px transparent;
+
 }
 
 .user-card:hover h2 {
     top: -5%;
     color: red;
+    text-shadow: 0 0 10px black;
+
 }
 
 .user-card img {
     max-width: 100%;
     
+}
+.user-card p { 
+    position:relative;
+    top:27%;
+    font-size:1.5rem;
+    transition: text-shadow .2s;
+    text-shadow: 0 0 4px transparent;
+
+}
+.user-card:hover p {
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+.movie-list ul{ 
+    list-style:none;
+    text-align: inline-start;
+    font-size:2rem
 }

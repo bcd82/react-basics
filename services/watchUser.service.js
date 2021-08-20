@@ -25,13 +25,6 @@ const users = [
         isSelected:false
 
     },
-    {
-        userName: 'noOne',
-        key: utilService.makeId(),
-        watched: ['Fight Club', 'Stranger Things', 'Legion'],
-        isHidden: false,
-        isSelected:false
-    }
 ]
 
 const getUsers = () => users;
@@ -58,8 +51,15 @@ const selectUser = (key) => {
         if (key !== user.key) user.isHidden = true
         else user.isSelected = true;
     })
-    const userIdx = users.findIndex((user => key === user.key))
-    console.log(userIdx)
+
+}
+
+const unSelectUser = (userKey) =>{
+    users.forEach((user) => {
+        user.isHidden = false
+        user.isSelected = false;
+    })
+
 }
 
 const getSelectedUserIdx = () => users.findIndex((user)=> user.isSelected === true)
@@ -69,5 +69,6 @@ export const userService = {
     createUser,
     deleteUser,
     selectUser,
+    unSelectUser,
     getSelectedUserIdx
 }

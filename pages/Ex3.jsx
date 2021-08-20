@@ -8,13 +8,13 @@ export class Ex3 extends React.Component {
         selectedIdx: -1,
     };
 
-    setUsers = () => {
-        this.setState({ users: userService.getUsers() });
-    };
-
     componentDidMount = () => {
         this.setUsers();
         console.log(this.state.users);
+    };
+
+    setUsers = () => {
+        this.setState({ users: userService.getUsers() });
     };
 
     onClickUser = (userKey) => {
@@ -26,9 +26,20 @@ export class Ex3 extends React.Component {
         this.setUsers();
     };
 
+    onBackToUsers = () => {
+        userService.unSelectUser()
+        this.setState({showUserMovies:false})
+        this.setUsers()
+    };
+
+
     onDeleteUser = (ev, userKey) => {
-        ev.preventDefault();
+        ev.stopPropagation();
         userService.deleteUser(userKey);
+        if(this.state.showUserMovies){
+            this.onBackToUsers()
+            return
+        }
         this.setUsers();
     };
 
@@ -43,29 +54,23 @@ export class Ex3 extends React.Component {
         return (
             <div className="movie-list">
                 <ul>
-                    {user.watched.map((movie,idx) => {
-
+                    {user.watched.map((movie, idx) => {
                         return <li key={idx}>{movie.toString()}</li>;
                     })}
                 </ul>
-                <button onClick={this.onBackToList(user.key)}>Back</button>
+                <button onClick={()=>{this.onBackToUsers(user.key)}}>Back</button>
             </div>
         );
     };
 
-    onBackToList = () => {
-        
-    };
     render() {
         const { users, showUserMovies, selectedIdx } = this.state;
         const { onAddUser, onClickUser, onDeleteUser, movieList } = this;
         return (
             <div className="who-watch-page">
+                <div className="main-layout">
                 <div className="top-bar">
                     <h1>Netflix Thing</h1>
-                    {!showUserMovies && (
-                        <button onClick={this.onAddUser}>Add User</button>
-                    )}
                 </div>
                 <div className="users-container">
                     {users.map((user, idx) => {
@@ -75,14 +80,14 @@ export class Ex3 extends React.Component {
                                     className="user-card"
                                     key={user.key}
                                     id={idx}
-                                    onClick={() => this.onClickUser(user.key)}
+                                    onClick={() => onClickUser(user.key)}
                                 >
                                     <img
                                         src={`https://robohash.org/https://robohash.org/${user.userName}?set=set5?set=set5`}
                                     />
                                     <button
                                         onClick={(ev) =>
-                                            this.onDeleteUser(ev, user.key)
+                                            onDeleteUser(ev, user.key)
                                         }
                                     >
                                         delete
@@ -91,8 +96,14 @@ export class Ex3 extends React.Component {
                                 </div>
                             );
                     })}
+                    {!showUserMovies && (
+                        <div className="user-card" onClick={() => onAddUser()}>
+                            <p>Add New User +</p>
+                        </div>
+                    )}
                     {showUserMovies && movieList(users[selectedIdx])}
                 </div>
+            </div>
             </div>
         );
     }

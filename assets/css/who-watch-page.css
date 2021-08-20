@@ -1,0 +1,62 @@
+.who-watch-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to top, #000000, #434343);
+    height: 100vh;
+    color: white;
+}
+
+.who-watch-page .top-bar {
+    display: flex;
+    width: 63%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.who-watch-page h1 {
+    width: 90%;
+    text-align: left;
+}
+
+.users-container {
+    display: flex;
+    width: 70%;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.user-card {
+    background-color: rgba(255, 255, 255, 0.301);
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 black;
+    transition: background-color .2s, box-shadow .2s;
+    margin-bottom:75px;
+}
+
+.user-card:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.466);
+}
+
+.user-card h2 {
+    position: relative;
+    top: 0;
+    transition: top .3s, color .2s;
+    color: white;
+}
+
+.user-card:hover h2 {
+    top: -5%;
+    color: red;
+}
+
+.user-card img {
+    max-width: 100%;
+    
+}

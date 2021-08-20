@@ -1,6 +1,19 @@
 @import '../css/show-time.css';
+@import '../css/timer-page.css';
+@import '../css/who-watch-page.css';
 body {
-    background-color: lightblue;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+    text-align: center;
+}
+
+header {
+    padding: 20px 0;
+    width: 100%;
+    background-color: beige;
 }
 
 .user-preview {
@@ -12,4 +25,9 @@ body {
 
 .user-preview button {
     margin: 5px;
+}
+
+a {
+    font-size: 2rem;
+    margin-right: 10px;
 }

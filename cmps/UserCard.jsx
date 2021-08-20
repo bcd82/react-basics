@@ -10,7 +10,7 @@ export const UserCard = (props) => {
             <img
                 src={`https://robohash.org/https://robohash.org/${name}?set=set5?set=set5`}
             />
-            <button onClick={deleteFunc}>delete</button>
+            <button onClick={deleteFunc}>Delete</button>
             <h2>{name}</h2>
         </div>
     );

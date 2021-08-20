@@ -6,8 +6,9 @@
     width: 200px;
     margin: 0 auto;
     height: 400px;
-    outline: 1px solid gray;
     padding: 10px 20px;
+    margin-top:50px;
+    border-radius:12px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -16,12 +17,12 @@
 }
 
 .time-box.dark {
-    background-color: rgb(22, 22, 22);
+    background-color: rgb(48, 48, 48);
     color: white;
 }
 
 .time-box.light {
-    background-color: white;
+    background-color: rgb(245, 243, 223);
     color: rgb(22, 22, 22);
 }
 

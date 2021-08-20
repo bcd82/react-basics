@@ -12,7 +12,7 @@ export const ShowTime = (props) => {
       <h2>
         {hours}:{minutes < 10 ? "0" + minutes : minutes}
       </h2>
-      <img src="../assets/img/seasons.png" className={'weather-img ' + checkMonth()} />
+      <img src="./assets/img/seasons.png" className={'weather-img ' + checkMonth()} />
     </section>
   );
 };

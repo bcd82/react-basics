@@ -2,7 +2,7 @@ import { CountDown } from "../cmps/CountDown.jsx";
 
 export const Ex2 = () => {
     const playSound = () => {
-        const endSound = new Audio("../assets/audio/timer-over.wav");
+        const endSound = new Audio("./assets/audio/timer-over.wav");
         endSound.play();
     };
 

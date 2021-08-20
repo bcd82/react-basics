@@ -51,16 +51,16 @@
 .user-card h2 {
     position: relative;
     top: 0;
-    transition: top .3s, color .2s;
+    transition: top .3s, color .3s, text-shadow .3s;
     color: white;
-    text-shadow: 0 0 4px transparent;
+    text-shadow: 0 0 0px black;
 
 }
 
 .user-card:hover h2 {
     top: -5%;
     color: red;
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 5px 10px black;
 
 }
 

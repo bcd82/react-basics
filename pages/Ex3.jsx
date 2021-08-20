@@ -70,7 +70,7 @@ export class Ex3 extends React.Component {
             <div className="who-watch-page">
                 <div className="main-layout">
                 <div className="top-bar">
-                    <h1>Netflix Thing</h1>
+                    <h1>Who's watching?</h1>
                 </div>
                 <div className="users-container">
                     {users.map((user, idx) => {

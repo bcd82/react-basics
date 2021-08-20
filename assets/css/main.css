@@ -1,6 +1,8 @@
 @import '../css/show-time.css';
 @import '../css/timer-page.css';
 @import '../css/who-watch-page.css';
+@import '../css/move-mouse-page.css';
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

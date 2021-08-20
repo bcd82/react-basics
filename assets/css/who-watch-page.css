@@ -19,6 +19,7 @@
 .who-watch-page h1 {
     width: 90%;
     text-align: left;
+    margin-bottom:50px;
 }
 
 .users-container {

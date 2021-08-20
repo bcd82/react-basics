@@ -1,4 +1,3 @@
-import '../assets/css/move-mouse-page.css'
 
 export class Ex4 extends React.Component {
     state = {

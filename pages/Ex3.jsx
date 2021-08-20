@@ -1,5 +1,5 @@
 import { userService } from "../services/watchUser.service.js";
-import { watchProfile } from "../cmps/watchProfile.jsx";
+import { UserCard } from "../cmps/UserCard.jsx";
 
 export class Ex3 extends React.Component {
     state = {
@@ -27,18 +27,17 @@ export class Ex3 extends React.Component {
     };
 
     onBackToUsers = () => {
-        userService.unSelectUser()
-        this.setState({showUserMovies:false})
-        this.setUsers()
+        userService.unSelectUser();
+        this.setState({ showUserMovies: false });
+        this.setUsers();
     };
-
 
     onDeleteUser = (ev, userKey) => {
         ev.stopPropagation();
         userService.deleteUser(userKey);
-        if(this.state.showUserMovies){
-            this.onBackToUsers()
-            return
+        if (this.state.showUserMovies) {
+            this.onBackToUsers();
+            return;
         }
         this.setUsers();
     };
@@ -50,7 +49,6 @@ export class Ex3 extends React.Component {
     };
 
     movieList = (user) => {
-        console.log(this.users);
         return (
             <div className="movie-list">
                 <ul>
@@ -58,7 +56,13 @@ export class Ex3 extends React.Component {
                         return <li key={idx}>{movie.toString()}</li>;
                     })}
                 </ul>
-                <button onClick={()=>{this.onBackToUsers(user.key)}}>Back</button>
+                <button
+                    onClick={() => {
+                        this.onBackToUsers(user.key);
+                    }}
+                >
+                    Back
+                </button>
             </div>
         );
     };
@@ -69,41 +73,36 @@ export class Ex3 extends React.Component {
         return (
             <div className="who-watch-page">
                 <div className="main-layout">
-                <div className="top-bar">
-                    <h1>Who's watching?</h1>
-                </div>
-                <div className="users-container">
-                    {users.map((user, idx) => {
-                        if (!user.isHidden)
-                            return (
-                                <div
-                                    className="user-card"
-                                    key={user.key}
-                                    id={idx}
-                                    onClick={() => onClickUser(user.key)}
-                                >
-                                    <img
-                                        src={`https://robohash.org/https://robohash.org/${user.userName}?set=set5?set=set5`}
+                    <div className="top-bar">
+                        <h1>Who's watching?</h1>
+                    </div>
+                    <div className="users-container">
+                        {users.map((user, idx) => {
+                            if (!user.isHidden)
+                                return (
+                                    <UserCard
+                                        userKey={user.key}
+                                        key={user.key}
+                                        name={user.userName}
+                                        id={idx}
+                                        deleteFunc={(ev) => {
+                                            onDeleteUser(ev, user.key);
+                                        }}
+                                        onClick={() => onClickUser(user.key)}
                                     />
-                                    <button
-                                        onClick={(ev) =>
-                                            onDeleteUser(ev, user.key)
-                                        }
-                                    >
-                                        delete
-                                    </button>
-                                    <h2>{user.userName}</h2>
-                                </div>
-                            );
-                    })}
-                    {!showUserMovies && (
-                        <div className="user-card" onClick={() => onAddUser()}>
-                            <p>Add New User +</p>
-                        </div>
-                    )}
-                    {showUserMovies && movieList(users[selectedIdx])}
+                                );
+                        })}
+                        {!showUserMovies && (
+                            <div
+                                className="user-card"
+                                onClick={() => onAddUser()}
+                            >
+                                <p>Add New User +</p>
+                            </div>
+                        )}
+                        {showUserMovies && movieList(users[selectedIdx])}
+                    </div>
                 </div>
-            </div>
             </div>
         );
     }

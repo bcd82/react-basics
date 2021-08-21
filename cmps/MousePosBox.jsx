@@ -21,11 +21,9 @@ export class MousePosBox  extends React.Component  {
     render() {
         const {mousePosition} = this.state
         return (
-            <div>
                 <div className="mouse-position">
                     <p>{mousePosition}</p>
                 </div>
-            </div>
         );
      
     }

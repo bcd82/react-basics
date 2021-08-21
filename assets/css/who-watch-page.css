@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     background: linear-gradient(to top, #000000, #434343);
-    height: 100vh;
+    height: 100%;
     color: white;
 }
 .who-watch-page .main-layout { 
@@ -20,6 +20,7 @@
     width: 90%;
     text-align: left;
     margin-bottom:50px;
+    text-align: center;
 }
 
 .users-container {
@@ -28,19 +29,21 @@
     align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
+    align-self: center;
+    padding:20px;
+    justify-content: center;
 
 }
 
 .user-card {
     background-color: rgba(255, 255, 255, 0.301);
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 0 black;
     transition: background-color .2s, box-shadow .2s;
     margin-bottom:100px;
-    cursor: pointer;
 }
 
 .user-card:hover {
@@ -74,16 +77,17 @@
     font-size:1.5rem;
     transition: text-shadow .2s;
     text-shadow: 0 0 4px transparent;
-
 }
 .user-card:hover p {
     color: white;
     text-shadow: 0 0 10px black;
 }
-.movie-list ul{ 
+.watch-list ul{ 
     list-style:none;
     text-align: inline-start;
-    font-size:2rem
+    font-size:1rem;
+    position: relative;
+    top:-20px;
 }
 .who-watch-page button { 
     border:none;
@@ -100,4 +104,31 @@
     
     background-color:red;
 
+}
+@media (min-width:455px){
+    .user-card {
+        height: 200px;
+        width: 200px;
+        cursor: pointer;
+    }
+    .watch-list ul{ 
+        list-style:none;
+        text-align: inline-start;
+        font-size:2rem
+    }
+}
+@media (min-width:900px) {
+    .users-container {
+        align-items: flex-start;
+        justify-content: flex-start;
+        width:900px;
+        padding:0px;
+
+    }
+    .who-watch-page {
+        height: 100vh;
+    }
+    .who-watch-page h1 {
+        text-align: left;
+    }
 }

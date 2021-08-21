@@ -11,5 +11,15 @@
     bottom:0;
     padding:10px 20px ;
     background-color: rgba(240, 248, 255, 0.185);
-
+    margin: 0 auto;
+    width:300px;
+}
+.move-mouse-page h1 {
+    margin-bottom:0;
+    font-weight: 400;
+    font-size:2rem
+}
+.move-mouse-page h2 {
+    color:rgb(189, 189, 189);
+    font-weight:lighter;
 }

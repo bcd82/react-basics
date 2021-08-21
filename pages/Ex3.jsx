@@ -50,10 +50,11 @@ export class Ex3 extends React.Component {
 
     movieList = (user) => {
         return (
-            <div className="movie-list">
+            <div className="watch-list">
                 <ul>
-                    {user.watched.map((movie, idx) => {
-                        return <li key={idx}>{movie.toString()}</li>;
+                <strong>Watched:</strong>
+                    {user.watched.map((title, idx) => {
+                        return <li key={idx}>{title}</li>;
                     })}
                 </ul>
                 <button

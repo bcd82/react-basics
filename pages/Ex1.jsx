@@ -2,7 +2,7 @@ import { ShowTime } from "../cmps/ShowTime.jsx";
 
 export class Ex1 extends React.Component {
     now = new Date();
-    month = this.now.getMonth();
+    month = this.now.getMonth() + 1;
 
     state = {
         hours: this.now.getHours(),
